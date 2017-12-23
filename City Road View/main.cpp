@@ -361,7 +361,7 @@ void drawFilledCircle(GLfloat x, GLfloat y, GLfloat radius)
         glEnd();
         glPopMatrix();
 
-         glPushMatrix();
+        glPushMatrix();
         glColor3ub(255,0,0);
         glBegin(GL_QUADS);
         glVertex2i(284,408);
@@ -383,8 +383,8 @@ void myDisplay(void)
         Home();
         drawFilledCircle(300.0f,400.0f,40.0f);
         Hospital();
+        Road();
         glFlush ();
-
 }
 
 int main(int argc, char** argv)
