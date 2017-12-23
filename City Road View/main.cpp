@@ -726,6 +726,32 @@ void SchoolDoor()
 
 }
 
+void RoadLight()
+{
+        glPushMatrix();
+        glColor3ub(90,107,121);
+        glBegin(GL_QUADS);
+        glVertex2i(24,157);
+        glVertex2i(30,157);
+        glVertex2i(30,230);
+        glVertex2i(24,230);
+        glEnd();
+        glPopMatrix();
+
+      /*  glColor3ub(255,255,255);
+        drawCircle(55.0f,238.0f,7.0f);
+
+        glPushMatrix();
+        glColor3ub(90,107,121);
+        glBegin(GL_QUADS);
+        glVertex2i(25,230);
+        glVertex2i(31,225);
+        glVertex2i(55,245);
+        glVertex2i(51,250);
+        glEnd();
+        glPopMatrix();*/
+}
+
 void Sun()
 {
         glColor3ub(246,171,26);
@@ -752,7 +778,7 @@ void Cloud()
         drawCircle(139.0f,613.0f,35.0f);
         drawCircle(111.0f,595.0f,20.0f);
 
-        glutPostRedisplay();
+        //glutPostRedisplay();
 }
 
 
@@ -995,11 +1021,19 @@ void Car1()
     //glPushMatrix();
     glColor3ub(48,48,46);
     drawCircle(342-500,116,15);
+    glColor3ub(255,255,255);
+    drawCircle(342-500,116,10);
+    glColor3ub(0,0,0);
+    drawCircle(342-500,116,8);
     //glPopMatrix();
 
     //glPushMatrix();
     glColor3ub(48,48,46);
     drawCircle(434-500,116,15);
+    glColor3ub(255,255,255);
+    drawCircle(434-500,116,10);
+    glColor3ub(0,0,0);
+    drawCircle(434-500,116,8);
     glPopMatrix();
 }
 
@@ -1050,7 +1084,7 @@ void myDisplay(void)
 
         Sun();
         Cloud();
-
+        RoadLight();
         Road();
         RoadCorner1();
         RoadCorner2();
