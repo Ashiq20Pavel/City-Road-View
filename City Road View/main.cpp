@@ -945,6 +945,57 @@ void Tree()
     }
 }
 
+void LampPost()
+{
+    for(int i=0;i<8*115;i+=115)
+    {
+        glPushMatrix();
+        glColor3ub(0,0,0);
+        glBegin(GL_QUADS);
+        glVertex2i(34+i,158);
+        glVertex2i(51+i,158);
+        glVertex2i(51+i,160);
+        glVertex2i(34+i,160);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(0,0,0);
+        glBegin(GL_QUADS);
+        glVertex2i(37+i,160);
+        glVertex2i(48+i,160);
+        glVertex2i(48+i,162);
+        glVertex2i(37+i,162);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(0,0,0);
+        glBegin(GL_QUADS);
+        glVertex2i(40+i,162);
+        glVertex2i(45+i,162);
+        glVertex2i(45+i,206);
+        glVertex2i(40+i,206);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(0,0,0);
+        glBegin(GL_QUADS);
+        glVertex2i(38+i,206);
+        glVertex2i(48+i,206);
+        glVertex2i(48+i,209);
+        glVertex2i(38+i,209);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(255,244,78);
+        drawCircle(43+i,218,9);
+        glPopMatrix();
+    }
+}
+
 void Car1()
 {
     glPushMatrix();
@@ -1077,6 +1128,7 @@ void myDisplay(void)
 
         BetweenRoadAndBuldings();
         Road();
+        LampPost();
         RoadCorner1();
         RoadCorner2();
         RoadGrash();
