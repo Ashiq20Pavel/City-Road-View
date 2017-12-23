@@ -726,7 +726,6 @@ void SchoolDoor()
 
 }
 
-
 void Sun()
 {
         glColor3ub(246,171,26);
@@ -736,6 +735,7 @@ void Sun()
 
 void Cloud()
 {
+<<<<<<< HEAD
 
         glColor3ub(230,234,237);
         drawCircle(594.0f,586.0f,20.0f);
@@ -755,6 +755,8 @@ void Cloud()
 
         //glutPostRedisplay();
 
+=======
+>>>>>>> 2b7c930610f85ed47b8b2d617a73695fe363f9c4
     glColor3ub(230,234,237);
     drawCircle(594.0f,586.0f,20.0f);
     drawCircle(572.0f,595.0f,28.0f);
@@ -965,6 +967,57 @@ void Tree()
     }
 }
 
+void LampPost()
+{
+    for(int i=0;i<8*11;i+=115)
+    {
+        glPushMatrix();
+        glColor3ub(0,0,0);
+        glBegin(GL_QUADS);
+        glVertex2i(34+i,158);
+        glVertex2i(51+i,158);
+        glVertex2i(51+i,160);
+        glVertex2i(34+i,160);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(0,0,0);
+        glBegin(GL_QUADS);
+        glVertex2i(37+i,160);
+        glVertex2i(48+i,160);
+        glVertex2i(48+i,162);
+        glVertex2i(37+i,162);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(0,0,0);
+        glBegin(GL_QUADS);
+        glVertex2i(40+i,162);
+        glVertex2i(45+i,162);
+        glVertex2i(45+i,206);
+        glVertex2i(40+i,206);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(0,0,0);
+        glBegin(GL_QUADS);
+        glVertex2i(38+i,206);
+        glVertex2i(48+i,206);
+        glVertex2i(48+i,209);
+        glVertex2i(38+i,209);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(255,244,78);
+        drawCircle(43+i,218,9);
+        glPopMatrix();
+    }
+}
+
 void Car1()
 {
     glPushMatrix();
@@ -1022,6 +1075,7 @@ void Car1()
 
     //glPushMatrix();
     glColor3ub(48,48,46);
+<<<<<<< HEAD
     drawCircle(342-500,116,15);
     glColor3ub(255,255,255);
     drawCircle(342-500,116,10);
@@ -1030,10 +1084,14 @@ void Car1()
 
     drawCircle(342-500,110,15);
 
+=======
+    drawCircle(342-500,110,15);
+>>>>>>> 2b7c930610f85ed47b8b2d617a73695fe363f9c4
     //glPopMatrix();
 
     //glPushMatrix();
     glColor3ub(48,48,46);
+<<<<<<< HEAD
 
     drawCircle(434-500,116,15);
     glColor3ub(255,255,255);
@@ -1044,6 +1102,10 @@ void Car1()
     drawCircle(434-500,110,15);
 
 
+=======
+    drawCircle(434-500,110,15);
+
+>>>>>>> 2b7c930610f85ed47b8b2d617a73695fe363f9c4
     glPopMatrix();
 }
 
@@ -1109,10 +1171,14 @@ void myDisplay(void)
 
         Sun();
         Cloud();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2b7c930610f85ed47b8b2d617a73695fe363f9c4
 
         BetweenRoadAndBuldings();
         Road();
+        LampPost();
         RoadCorner1();
         RoadCorner2();
         RoadGrash();
