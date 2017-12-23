@@ -730,11 +730,19 @@ void Sun()
 
 void Cloud()
 {
+
         glColor3ub(230,234,237);
         drawCircle(594.0f,586.0f,20.0f);
         drawCircle(572.0f,595.0f,28.0f);
         drawCircle(539.0f,595.0f,35.0f);
         drawCircle(513.0f,575.0f,20.0f);
+
+        //glColor3ub(230,234,237);
+        drawCircle(393.0f,577.0f,20.0f);
+        drawCircle(370.0f,585.0f,28.0f);
+        drawCircle(339.0f,583.0f,35.0f);
+        drawCircle(311.0f,565.0f,20.0f);
+
         glutPostRedisplay();
 }
 
