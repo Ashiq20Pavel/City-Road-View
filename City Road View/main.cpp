@@ -745,6 +745,11 @@ void Cloud()
         drawCircle(339.0f,583.0f,35.0f);
         drawCircle(311.0f,565.0f,20.0f);
 
+        drawCircle(193.0f,607.0f,20.0f);
+        drawCircle(170.0f,615.0f,28.0f);
+        drawCircle(139.0f,613.0f,35.0f);
+        drawCircle(111.0f,595.0f,20.0f);
+
         glutPostRedisplay();
 }
 
