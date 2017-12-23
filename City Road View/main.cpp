@@ -374,6 +374,74 @@ void drawFilledCircle(GLfloat x, GLfloat y, GLfloat radius)
 
 }
 
+void Road()
+{
+    glPushMatrix();
+    glColor3ub(0,0,0);
+    glBegin(GL_QUADS);
+    glVertex2i(0,148);
+    glVertex2i(902,148);
+    glVertex2i(902,47);
+    glVertex2i(0,47);
+    glEnd();
+    glPopMatrix();
+
+    for(int i=0;i<120*8;i++)
+    {
+        glPushMatrix();
+        glColor3ub(255,255,255);
+        glBegin(GL_QUADS);
+        glVertex2i(0+i,95);
+        glVertex2i(35+i,95);
+        glVertex2i(35+i,100);
+        glVertex2i(0+i,100);
+        glEnd();
+        glPopMatrix();
+        i+=120;
+    }
+}
+
+void RoadCorner()
+{
+    for(int i=0;i<16*60;i++)
+    {
+        glPushMatrix();
+        glColor3ub(255,255,255);
+        glBegin(GL_QUADS);
+        glVertex2i(0+i,148);
+        glVertex2i(16+i,148);
+        glVertex2i(16+i,157);
+        glVertex2i(0+i,157);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(0,0,0);
+        glBegin(GL_QUADS);
+        glVertex2i(16+i,148);
+        glVertex2i(39+i,148);
+        glVertex2i(39+i,157);
+        glVertex2i(16+i,157);
+        glEnd();
+        glPopMatrix();
+
+        i+=30;
+    }
+}
+
+void RoadGrash()
+{
+    glPushMatrix();
+    glColor3ub(39,62,8);
+    glBegin(GL_QUADS);
+    glVertex3f(0.0,0.0,0.0);
+    glVertex3f(902.0,0.0,0.0);
+    glVertex3f(902.0,47.0,0.0);
+    glVertex3f(0.0,47.0,0.0);
+    glEnd();
+    glPopMatrix();
+}
+
 void myDisplay(void)
 {
         glClear (GL_COLOR_BUFFER_BIT);
@@ -384,6 +452,8 @@ void myDisplay(void)
         drawFilledCircle(300.0f,400.0f,40.0f);
         Hospital();
         Road();
+        RoadCorner();
+        RoadGrash();
         glFlush ();
 }
 
