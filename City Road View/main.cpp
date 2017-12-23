@@ -374,6 +374,33 @@ void drawFilledCircle(GLfloat x, GLfloat y, GLfloat radius)
 
 }
 
+void Road()
+{
+    glPushMatrix();
+    glColor3ub(0,0,0);
+    glBegin(GL_QUADS);
+    glVertex2i(0,148);
+    glVertex2i(902,148);
+    glVertex2i(902,0);
+    glVertex2i(0,0);
+    glEnd();
+    glPopMatrix();
+
+    for(int i=0;i<120*8;i++)
+    {
+        glPushMatrix();
+        glColor3ub(255,255,255);
+        glBegin(GL_QUADS);
+        glVertex2i(0+i,65);
+        glVertex2i(35+i,65);
+        glVertex2i(35+i,70);
+        glVertex2i(0+i,70);
+        glEnd();
+        glPopMatrix();
+        i+=120;
+    }
+}
+
 void myDisplay(void)
 {
         glClear (GL_COLOR_BUFFER_BIT);
