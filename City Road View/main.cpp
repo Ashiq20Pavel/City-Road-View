@@ -3,6 +3,8 @@
 #include <math.h>
 #include <GL/glut.h>
 
+float c1xp=0.0,c1yp=0.0,c1zp=0.0;
+
 void myInit (void)
 {
         glClearColor(1.0, 1.0, 1.0, 0.0);
@@ -931,70 +933,71 @@ void Tree()
 void Car1()
 {
     glPushMatrix();
+    glTranslatef(c1xp,c1yp,c1zp);
     glColor3ub(34,160,160);
     glBegin(GL_QUADS);
-    glVertex2i(311,112);
-    glVertex2i(414,112);
-    glVertex2i(414,174);
-    glVertex2i(311,174);
+    glVertex2i(-311,112);
+    glVertex2i(-414,112);
+    glVertex2i(-414,174);
+    glVertex2i(-311,174);
     glEnd();
     glPopMatrix();
 
     glPushMatrix();
     glColor3ub(45,194,198);
     glBegin(GL_TRIANGLE_FAN);
-    glVertex2i(414,162);
-    glVertex2i(445,162);
-    glVertex2i(473,134);
-    glVertex2i(473,112);
-    glVertex2i(414,112);
+    glVertex2i(-414,162);
+    glVertex2i(-445,162);
+    glVertex2i(-473,134);
+    glVertex2i(-473,112);
+    glVertex2i(-414,112);
     glEnd();
     glPopMatrix();
 
     glPushMatrix();
     glColor3ub(75,89,89);
     glBegin(GL_TRIANGLE_FAN);
-    glVertex2i(417,158);
-    glVertex2i(444,158);
-    glVertex2i(463,139);
-    glVertex2i(463,134);
-    glVertex2i(417,134);
+    glVertex2i(-417,158);
+    glVertex2i(-444,158);
+    glVertex2i(-463,139);
+    glVertex2i(-463,134);
+    glVertex2i(-417,134);
     glEnd();
     glPopMatrix();
 
     glPushMatrix();
     glColor3ub(255,0,0);
     glBegin(GL_QUADS);
-    glVertex2i(464,128);
-    glVertex2i(472,128);
-    glVertex2i(472,113);
-    glVertex2i(464,113);
+    glVertex2i(-464,128);
+    glVertex2i(-472,128);
+    glVertex2i(-472,113);
+    glVertex2i(-464,113);
     glEnd();
     glPopMatrix();
 
     glPushMatrix();
     glColor3ub(0,0,0);
     glBegin(GL_QUADS);
-    glVertex2i(419,126);
-    glVertex2i(431,126);
-    glVertex2i(431,129);
-    glVertex2i(419,129);
+    glVertex2i(-419,126);
+    glVertex2i(-431,126);
+    glVertex2i(-431,129);
+    glVertex2i(-419,129);
     glEnd();
     glPopMatrix();
 
     glPushMatrix();
     glColor3ub(48,48,46);
-    drawFilledCircle(342,116,15);
+    drawFilledCircle(-342,116,15);
     glPopMatrix();
 
     glPushMatrix();
     glColor3ub(48,48,46);
-    drawCircle(342,116,15);
+    drawCircle(-342,116,15);
     glPopMatrix();
 
     glPushMatrix();
     glColor3ub(48,48,46);
-    drawCircle(434,116,15);
+    drawCircle(-434,116,15);
     glPopMatrix();
 }
 
