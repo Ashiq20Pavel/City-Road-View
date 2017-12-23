@@ -600,8 +600,23 @@ void Car1()
     glPopMatrix();
 
     glPushMatrix();
+    glColor3ub(0,0,0);
+    glBegin(GL_QUADS);
+    glVertex2i(419,126);
+    glVertex2i(431,126);
+    glVertex2i(431,129);
+    glVertex2i(419,129);
+    glEnd();
+    glPopMatrix();
+
+    glPushMatrix();
     glColor3ub(48,48,46);
-    drawFilledCircle(342,98+18,15);
+    drawFilledCircle(342,116,15);
+    glPopMatrix();
+
+    glPushMatrix();
+    glColor3ub(48,48,46);
+    drawFilledCircle(434,116,15);
     glPopMatrix();
 }
 
