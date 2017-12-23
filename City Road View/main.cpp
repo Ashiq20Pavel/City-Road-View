@@ -989,7 +989,7 @@ void myDisplay(void)
         drawFilledCircle(300.0f,400.0f,40.0f);
         Hospital();
 
-       Hotel();
+        Hotel();
         Door();
 
         School();
