@@ -381,8 +381,13 @@ void Road()
     glBegin(GL_QUADS);
     glVertex2i(0,148);
     glVertex2i(902,148);
+<<<<<<< HEAD
     glVertex2i(902,47);
     glVertex2i(0,47);
+=======
+    glVertex2i(902,0);
+    glVertex2i(0,0);
+>>>>>>> 36f5f3db41651853f4e41db6c681c8e536f5726f
     glEnd();
     glPopMatrix();
 
@@ -391,16 +396,24 @@ void Road()
         glPushMatrix();
         glColor3ub(255,255,255);
         glBegin(GL_QUADS);
+<<<<<<< HEAD
         glVertex2i(0+i,95);
         glVertex2i(35+i,95);
         glVertex2i(35+i,100);
         glVertex2i(0+i,100);
+=======
+        glVertex2i(0+i,65);
+        glVertex2i(35+i,65);
+        glVertex2i(35+i,70);
+        glVertex2i(0+i,70);
+>>>>>>> 36f5f3db41651853f4e41db6c681c8e536f5726f
         glEnd();
         glPopMatrix();
         i+=120;
     }
 }
 
+<<<<<<< HEAD
 void RoadCorner()
 {
     for(int i=0;i<16*60;i++)
@@ -442,6 +455,8 @@ void RoadGrash()
     glPopMatrix();
 }
 
+=======
+>>>>>>> 36f5f3db41651853f4e41db6c681c8e536f5726f
 void myDisplay(void)
 {
         glClear (GL_COLOR_BUFFER_BIT);
