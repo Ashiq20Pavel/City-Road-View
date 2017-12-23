@@ -381,42 +381,28 @@ void Road()
     glBegin(GL_QUADS);
     glVertex2i(0,148);
     glVertex2i(902,148);
-<<<<<<< HEAD
     glVertex2i(902,47);
     glVertex2i(0,47);
-=======
-    glVertex2i(902,0);
-    glVertex2i(0,0);
->>>>>>> 36f5f3db41651853f4e41db6c681c8e536f5726f
     glEnd();
     glPopMatrix();
 
-    for(int i=0;i<120*8;i++)
+    for(int i=0;i<120*8;i+=120)
     {
         glPushMatrix();
         glColor3ub(255,255,255);
         glBegin(GL_QUADS);
-<<<<<<< HEAD
         glVertex2i(0+i,95);
         glVertex2i(35+i,95);
         glVertex2i(35+i,100);
         glVertex2i(0+i,100);
-=======
-        glVertex2i(0+i,65);
-        glVertex2i(35+i,65);
-        glVertex2i(35+i,70);
-        glVertex2i(0+i,70);
->>>>>>> 36f5f3db41651853f4e41db6c681c8e536f5726f
         glEnd();
         glPopMatrix();
-        i+=120;
     }
 }
 
-<<<<<<< HEAD
-void RoadCorner()
+void RoadCorner1()
 {
-    for(int i=0;i<16*60;i++)
+    for(int i=0;i<16*60;i+=30)
     {
         glPushMatrix();
         glColor3ub(255,255,255);
@@ -437,15 +423,39 @@ void RoadCorner()
         glVertex2i(16+i,157);
         glEnd();
         glPopMatrix();
+    }
+}
 
-        i+=30;
+void RoadCorner2()
+{
+    for(int i=0;i<16*60;i+=30)
+    {
+        glPushMatrix();
+        glColor3ub(255,255,255);
+        glBegin(GL_QUADS);
+        glVertex2i(0+i,148-100);
+        glVertex2i(16+i,148-100);
+        glVertex2i(16+i,157-100);
+        glVertex2i(0+i,157-100);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(0,0,0);
+        glBegin(GL_QUADS);
+        glVertex2i(16+i,148-100);
+        glVertex2i(39+i,148-100);
+        glVertex2i(39+i,157-100);
+        glVertex2i(16+i,157-100);
+        glEnd();
+        glPopMatrix();
     }
 }
 
 void RoadGrash()
 {
     glPushMatrix();
-    glColor3ub(39,62,8);
+    glColor3ub(100,171,55);
     glBegin(GL_QUADS);
     glVertex3f(0.0,0.0,0.0);
     glVertex3f(902.0,0.0,0.0);
@@ -455,8 +465,101 @@ void RoadGrash()
     glPopMatrix();
 }
 
-=======
->>>>>>> 36f5f3db41651853f4e41db6c681c8e536f5726f
+
+
+void Tree()
+{
+//    glPushMatrix();
+//    glColor3ub(37,90,27);
+//    glBegin(GL_TRIANGLES);
+//    glVertex2i(24,78);
+//    glVertex2i(67,78);
+//    glVertex2i(46,110);
+//    glEnd();
+//    glPopMatrix();
+//
+//    glPushMatrix();
+//    glColor3ub(37,90,27);
+//    glBegin(GL_TRIANGLES);
+//    glVertex2i(24,70);
+//    glVertex2i(67,70);
+//    glVertex2i(46,102);
+//    glEnd();
+//    glPopMatrix();
+
+//    glPushMatrix();
+//    glColor3ub(37,90,27);
+//    glBegin(GL_TRIANGLES);
+//    glVertex2i(24,62);
+//    glVertex2i(67,62);
+//    glVertex2i(46,94);
+//    glEnd();
+//    glPopMatrix();
+//
+//    glPushMatrix();
+//    glColor3ub(37,90,27);
+//    glBegin(GL_TRIANGLES);
+//    glVertex2i(24,78-24);
+//    glVertex2i(67,78-24);
+//    glVertex2i(46,110-24);
+//    glEnd();
+//    glPopMatrix();
+
+    for(int i=0; i<7*130;i+=130)
+    {
+        glPushMatrix();
+        glColor3ub(37,90,27);
+        glBegin(GL_TRIANGLES);
+        glVertex2i(24+i,46);
+        glVertex2i(67+i,46);
+        glVertex2i(46+i,78);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(37,90,27);
+        glBegin(GL_TRIANGLES);
+        glVertex2i(24+i,40);
+        glVertex2i(67+i,40);
+        glVertex2i(46+i,72);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(161,89,61);
+        glBegin(GL_QUADS);
+        glVertex2i(39+i,40);
+        glVertex2i(52+i,40);
+        glVertex2i(52+i,0);
+        glVertex2i(39+i,0);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(37,90,27);
+        glBegin(GL_TRIANGLES);
+        glVertex2i(24+i,32);
+        glVertex2i(67+i,32);
+        glVertex2i(46+i,64);
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glColor3ub(37,90,27);
+        glBegin(GL_TRIANGLES);
+        glVertex2i(24+i,24);
+        glVertex2i(67+i,24);
+        glVertex2i(46+i,56);
+        glEnd();
+        glPopMatrix();
+    }
+}
+
+void Car1()
+{
+
+}
+
 void myDisplay(void)
 {
         glClear (GL_COLOR_BUFFER_BIT);
@@ -467,8 +570,10 @@ void myDisplay(void)
         drawFilledCircle(300.0f,400.0f,40.0f);
         Hospital();
         Road();
-        RoadCorner();
+        RoadCorner1();
+        RoadCorner2();
         RoadGrash();
+        Tree();
         glFlush ();
 }
 
