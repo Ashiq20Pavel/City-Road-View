@@ -398,6 +398,3 @@ int main(int argc, char** argv)
         myInit ();
         glutMainLoop();
 }
-
-
-
