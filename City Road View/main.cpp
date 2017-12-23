@@ -971,11 +971,12 @@ void Car1()
 
     glPushMatrix();
     glColor3ub(48,48,46);
-<<<<<<< HEAD
-    drawFilledCircle(434,116,15);
-=======
-    drawCircle(342,98+18,15);
->>>>>>> 7d8d4e743974d6f66c56a08e9c973c306a4af109
+    drawCircle(342,116,15);
+    glPopMatrix();
+
+    glPushMatrix();
+    glColor3ub(48,48,46);
+    drawCircle(434,116,15);
     glPopMatrix();
 }
 
