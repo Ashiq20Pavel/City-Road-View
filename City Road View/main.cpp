@@ -2,8 +2,11 @@
 #include <stdio.h>
 #include <math.h>
 #include <GL/glut.h>
+#include <iostream>
+using namespace std;
 
 float c1xp=0.0,c1yp=0.0,c1zp=0.0;
+float width=-940;
 
 void myInit (void)
 {
@@ -288,7 +291,7 @@ void Hospital()
             HospitalWindow1(HospitalStripe3,281);
         }
 
-         glPushMatrix(); //middle long stripe
+        glPushMatrix(); //middle long stripe
         glColor3ub(252,222,66);
         glBegin(GL_QUADS);
         glVertex2i(263,257);
@@ -305,7 +308,7 @@ void Hospital()
             HospitalMidWindow1(HospitalStripe4,370);
         }
 
-         int HospitalStripe5=260;
+        int HospitalStripe5=260;
         for(int i=3;i>=0;i--)
         {
             HospitalStripe5+=14;
@@ -363,7 +366,7 @@ void drawFilledCircle(GLfloat x, GLfloat y, GLfloat radius)
         glEnd();
         glPopMatrix();
 
-         glPushMatrix();
+        glPushMatrix();
         glColor3ub(255,0,0);
         glBegin(GL_QUADS);
         glVertex2i(284,408);
@@ -380,28 +383,28 @@ void drawFilledCircle(GLfloat x, GLfloat y, GLfloat radius)
 
 void HotelBelowWindow1(int x,int y)
 {
-        glPushMatrix();
-        glColor3ub(5,150,155);
-        glBegin(GL_QUADS);
-        glVertex2i(x,y);
-        glVertex2i(x+19,y);
-        glVertex2i(x+19,y+13);
-        glVertex2i(x,y+13);
-        glEnd();
-        glPopMatrix();
+    glPushMatrix();
+    glColor3ub(5,150,155);
+    glBegin(GL_QUADS);
+    glVertex2i(x,y);
+    glVertex2i(x+19,y);
+    glVertex2i(x+19,y+13);
+    glVertex2i(x,y+13);
+    glEnd();
+    glPopMatrix();
 }
 
 void HotelAboveWindow1(int x,int y)
 {
-        glPushMatrix();
-        glColor3ub(5,150,155);
-        glBegin(GL_QUADS);
-        glVertex2i(x,y);
-        glVertex2i(x+17,y);
-        glVertex2i(x+17,y+21);
-        glVertex2i(x,y+21);
-        glEnd();
-        glPopMatrix();
+    glPushMatrix();
+    glColor3ub(5,150,155);
+    glBegin(GL_QUADS);
+    glVertex2i(x,y);
+    glVertex2i(x+17,y);
+    glVertex2i(x+17,y+21);
+    glVertex2i(x,y+21);
+    glEnd();
+    glPopMatrix();
 }
 
 void drawCircle(GLfloat x, GLfloat y, GLfloat radius)
@@ -937,72 +940,96 @@ void Tree()
 void Car1()
 {
     glPushMatrix();
-    glTranslatef(c1xp,c1yp,c1zp);
     glColor3ub(34,160,160);
+    glTranslatef(c1xp,c1yp,c1zp);
     glBegin(GL_QUADS);
-    glVertex2i(-311,112);
-    glVertex2i(-414,112);
-    glVertex2i(-414,174);
-    glVertex2i(-311,174);
+    glVertex2i(311-500,112);
+    glVertex2i(414-500,112);
+    glVertex2i(414-500,174);
+    glVertex2i(311-500,174);
     glEnd();
-    glPopMatrix();
+    //glPopMatrix();
 
-    glPushMatrix();
+    //glPushMatrix();
     glColor3ub(45,194,198);
     glBegin(GL_TRIANGLE_FAN);
-    glVertex2i(-414,162);
-    glVertex2i(-445,162);
-    glVertex2i(-473,134);
-    glVertex2i(-473,112);
-    glVertex2i(-414,112);
+    glVertex2i(414-500,162);
+    glVertex2i(445-500,162);
+    glVertex2i(473-500,134);
+    glVertex2i(473-500,112);
+    glVertex2i(414-500,112);
     glEnd();
-    glPopMatrix();
+    //glPopMatrix();
 
-    glPushMatrix();
+    //glPushMatrix();
     glColor3ub(75,89,89);
     glBegin(GL_TRIANGLE_FAN);
-    glVertex2i(-417,158);
-    glVertex2i(-444,158);
-    glVertex2i(-463,139);
-    glVertex2i(-463,134);
-    glVertex2i(-417,134);
+    glVertex2i(417-500,158);
+    glVertex2i(444-500,158);
+    glVertex2i(463-500,139);
+    glVertex2i(463-500,134);
+    glVertex2i(417-500,134);
     glEnd();
-    glPopMatrix();
+    //glPopMatrix();
 
-    glPushMatrix();
+    //glPushMatrix();
     glColor3ub(255,0,0);
     glBegin(GL_QUADS);
-    glVertex2i(-464,128);
-    glVertex2i(-472,128);
-    glVertex2i(-472,113);
-    glVertex2i(-464,113);
+    glVertex2i(464-500,128);
+    glVertex2i(472-500,128);
+    glVertex2i(472-500,113);
+    glVertex2i(464-500,113);
     glEnd();
-    glPopMatrix();
+    //glPopMatrix();
 
-    glPushMatrix();
+    //glPushMatrix();
     glColor3ub(0,0,0);
     glBegin(GL_QUADS);
-    glVertex2i(-419,126);
-    glVertex2i(-431,126);
-    glVertex2i(-431,129);
-    glVertex2i(-419,129);
+    glVertex2i(419-500,126);
+    glVertex2i(431-500,126);
+    glVertex2i(431-500,129);
+    glVertex2i(419-500,129);
     glEnd();
-    glPopMatrix();
+    //glPopMatrix();
 
-    glPushMatrix();
+    //glPushMatrix();
     glColor3ub(48,48,46);
-    drawFilledCircle(-342,116,15);
-    glPopMatrix();
+    drawCircle(342-500,116,15);
+    //glPopMatrix();
 
-    glPushMatrix();
+    //glPushMatrix();
     glColor3ub(48,48,46);
-    drawCircle(-342,116,15);
+    drawCircle(434-500,116,15);
     glPopMatrix();
+}
 
-    glPushMatrix();
-    glColor3ub(48,48,46);
-    drawCircle(-434,116,15);
-    glPopMatrix();
+void CarTranslate(int value)
+{
+    width+=1.0;
+
+    if(width<10093)
+    {
+        c1xp+=0.1;
+        if(width>10091)
+        {
+            width=0;
+            c1xp=0.0;
+        }
+        //cout << "Working: Car 1 moving " << c1xp << endl;
+        cout << "Width: " << width << endl;
+    }
+
+    glutTimerFunc(0,CarTranslate,25);
+}
+
+void keyboard(unsigned char key, int x, int y)
+{
+    //-------- spin --------
+    if(key=='b')
+    {
+        CarTranslate(0);
+        glutPostRedisplay();
+    }
 }
 
 void myDisplay(void)
@@ -1041,6 +1068,7 @@ int main(int argc, char** argv)
         //glutInitWindowPosition (100, 150);
         glutCreateWindow ("City Road View");
         glutDisplayFunc(myDisplay);
+        glutKeyboardFunc(keyboard);
         myInit ();
         glutMainLoop();
 }
