@@ -726,31 +726,6 @@ void SchoolDoor()
 
 }
 
-void RoadLight()
-{
-        glPushMatrix();
-        glColor3ub(90,107,121);
-        glBegin(GL_QUADS);
-        glVertex2i(24,157);
-        glVertex2i(30,157);
-        glVertex2i(30,230);
-        glVertex2i(24,230);
-        glEnd();
-        glPopMatrix();
-
-      /*  glColor3ub(255,255,255);
-        drawCircle(55.0f,238.0f,7.0f);
-
-        glPushMatrix();
-        glColor3ub(90,107,121);
-        glBegin(GL_QUADS);
-        glVertex2i(25,230);
-        glVertex2i(31,225);
-        glVertex2i(55,245);
-        glVertex2i(51,250);
-        glEnd();
-        glPopMatrix();*/
-}
 
 void Sun()
 {
