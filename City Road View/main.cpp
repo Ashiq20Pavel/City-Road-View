@@ -945,7 +945,7 @@ void Tree()
     }
 }
 
-void LampPost()
+void LampPostX()
 {
     for(int i=0;i<8*11;i+=115)
     {
@@ -1128,7 +1128,7 @@ void myDisplay(void)
 
         BetweenRoadAndBuldings();
         Road();
-        LampPost();
+        LampPostX();
         RoadCorner1();
         RoadCorner2();
         RoadGrash();
