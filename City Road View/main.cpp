@@ -844,7 +844,18 @@ void RoadGrash()
     glPopMatrix();
 }
 
-
+void BetweenRoadAndBuldings()
+{
+    glPushMatrix();
+    glColor3ub(128,128,128);
+    glBegin(GL_QUADS);
+    glVertex3f(0.0,158.0,0.0);
+    glVertex3f(902.0,158.0,0.0);
+    glVertex3f(902.0,256.0,0.0);
+    glVertex3f(0.0,256.0,0.0);
+    glEnd();
+    glPopMatrix();
+}
 
 void Tree()
 {
@@ -991,12 +1002,13 @@ void Car1()
 
     //glPushMatrix();
     glColor3ub(48,48,46);
-    drawCircle(342-500,116,15);
+    drawCircle(342-500,110,15);
     //glPopMatrix();
 
     //glPushMatrix();
     glColor3ub(48,48,46);
-    drawCircle(434-500,116,15);
+    drawCircle(434-500,110,15);
+
     glPopMatrix();
 }
 
@@ -1019,12 +1031,27 @@ void CarTranslate(int value)
     glutTimerFunc(0,CarTranslate,25);
 }
 
+void StopCar1(int value)
+{
+
+    c1xp = 0.0;
+    //c1yp = 0.0;
+    //c1zp = 0.0;
+
+    glutTimerFunc(0,StopCar1,25);
+}
+
 void keyboard(unsigned char key, int x, int y)
 {
     //-------- spin --------
     if(key=='b')
     {
         CarTranslate(0);
+        glutPostRedisplay();
+    }
+    if(key=='s')
+    {
+        StopCar1(0);
         glutPostRedisplay();
     }
 }
@@ -1048,6 +1075,7 @@ void myDisplay(void)
         Sun();
         Cloud();
 
+        BetweenRoadAndBuldings();
         Road();
         RoadCorner1();
         RoadCorner2();
