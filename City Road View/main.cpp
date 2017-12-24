@@ -18,6 +18,8 @@ int ldr=255,ldg=255,ldb=255;
 int sdr=246,sdg=171,sdb=26;
 int cdr=230,cdg=234,cdb=237;
 int gdr=100,gdg=171,gdb=55;
+int m1r=103,m1g=155,m1b=176;
+int m2r=103,m2g=155,m2b=176;
 
 char school[] = "School";
 char hospital[] = "Hospital";
@@ -776,6 +778,14 @@ void HouseFrontTree()
      }
 }
 
+void Moon()
+{
+    glColor3ub(m1r,m1g,m1b);
+    drawCircle(730.0f,620.0f,40.0f);
+    glColor3ub(m2r,m2g,m2b);
+    drawCircle(740.0f,640.0f,40.0f);
+}
+
 void Sun()
 {
     glColor3ub(sdr,sdg,sdb);
@@ -1324,6 +1334,14 @@ void keyboard(unsigned char key, int x, int y)
             gdg=96;
             gdb=17;
 
+            m1r=246;
+            m1g=171;
+            m1b=26;
+
+            m2r=0;
+            m2g=50;
+            m2b=59;
+
         }else if(dnr==0 && dng==50 && dnb==59)
         {
             dnr=103;
@@ -1345,6 +1363,14 @@ void keyboard(unsigned char key, int x, int y)
             gdr=100;
             gdg=171;
             gdb=55;
+
+             m1r=103;
+            m1g=155;
+            m1b=176;
+
+            m2r=103;
+            m2g=155;
+            m2b=176;
 
             //100,171,55
 
@@ -1368,7 +1394,7 @@ void myDisplay(void)
     School();
     SchoolDoor();
     HouseFrontTree();
-
+    Moon();
     Sun();
     Cloud();
 
