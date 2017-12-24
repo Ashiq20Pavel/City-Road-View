@@ -749,6 +749,29 @@ void SchoolDoor()
     glPopMatrix();
 }
 
+void HouseFrontTree()
+{
+    glPushMatrix();
+    glColor3ub(156,112,63);
+    glBegin(GL_QUADS);
+    glVertex2i(140,256);
+    glVertex2i(148,256);
+    glVertex2i(148,285);
+    glVertex2i(140,285);
+    glEnd();
+    glPopMatrix();
+
+    glColor3ub(37,90,27);
+    drawCircle(144.0f,288.0f,10.0f);
+    drawCircle(150.0f,281.0f,9.0f);
+    drawCircle(157.0f,286.0f,7.0f);
+    drawCircle(146.0f,232.0f,12.0f);
+    drawCircle(134.0f,291.0f,12.0f);
+    drawCircle(138.0f,300.0f,13.0f);
+    drawCircle(144.0f,299.0f,7.0f);
+    drawCircle(150.0f,299.0f,10.0f);
+}
+
 void Sun()
 {
     glColor3ub(sdr,sdg,sdb);
@@ -1340,6 +1363,7 @@ void myDisplay(void)
 
     School();
     SchoolDoor();
+    HouseFrontTree();
 
     Sun();
     Cloud();
