@@ -16,6 +16,7 @@ float width=-940,width2=600,width3=2000;
 int dnr=103,dng=155,dnb=176;
 int ldr=255,ldg=255,ldb=255;
 int sdr=246,sdg=171,sdb=26;
+int cdr=230,cdg=234,cdb=237;
 
 char school[] = "School";
 char hospital[] = "Hospital";
@@ -756,7 +757,7 @@ void Sun()
 
 void Cloud()
 {
-    glColor3ub(230,234,237);
+    glColor3ub(cdr,cdg,cdb);
     drawCircle(594.0f,586.0f,20.0f);
     drawCircle(572.0f,595.0f,28.0f);
     drawCircle(539.0f,595.0f,35.0f);
@@ -1277,6 +1278,10 @@ void keyboard(unsigned char key, int x, int y)
             sdg=50;
             sdb=59;
 
+            cdr=0;
+            cdg=50;
+            cdb=59;
+
         }else if(dnr==0 && dng==50 && dnb==59)
         {
             dnr=103;
@@ -1290,6 +1295,12 @@ void keyboard(unsigned char key, int x, int y)
             sdr=246;
             sdg=171;
             sdb=26;
+
+            cdr=230;
+            cdg=234;
+            cdb=237;
+
+            //glColor3ub(230,234,237);
         }
     }
 }
