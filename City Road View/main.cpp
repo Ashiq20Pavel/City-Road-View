@@ -10,6 +10,8 @@ float c2xp=0.0,c2yp=0.0,c2zp=0.0;
 float p1xp=0.0,p1yp=0.0,p1zp=0.0;
 float p1sxp=0.0,p1syp=0.0,p1szp=0.0;
 float x=1.0;
+float rxp=0.0,ryp=0.0,rzp=0.0;
+float r=0.0;
 
 float width=-940,width2=600,width3=2000;
 
@@ -467,7 +469,6 @@ void Hotel()
     glVertex2i(449,289);
     glEnd();
     glPopMatrix();
-<<<<<<< HEAD
 
     glPushMatrix();
     glColor3ub(23,60,43);
@@ -480,66 +481,6 @@ void Hotel()
     glPopMatrix();
 
     glPushMatrix();
-    glColor3ub(15,47,106);
-    glBegin(GL_QUADS);
-    glVertex2i(500,289);
-    glVertex2i(517,289);
-    glVertex2i(517,435);
-    glVertex2i(500,435);
-=======
-
-    glPushMatrix();
-    glColor3ub(23,60,43);
-    glBegin(GL_QUADS);
-    glVertex2i(473,289);
-    glVertex2i(500,289);
-    glVertex2i(500,413);
-    glVertex2i(473,413);
->>>>>>> 1373c7794ee17db1f21964ad34db07654a77571a
-    glEnd();
-    glPopMatrix();
-
-    glPushMatrix();
-<<<<<<< HEAD
-    glColor3ub(21,63,53);
-    glBegin(GL_QUADS);
-    glVertex2i(517,289);
-    glVertex2i(617,289);
-    glVertex2i(617,408);
-    glVertex2i(517,408);
-    glEnd();
-    glPopMatrix();
-
-    glPushMatrix();  // above name plate
-    glColor3ub(30,72,230);
-    glBegin(GL_QUADS);
-    glVertex2i(526,408);
-    glVertex2i(600,408);
-    glVertex2i(600,423);
-    glVertex2i(526,423);
-    glEnd();
-    glPopMatrix();
-
-     glColor3ub(23,60,43);  // side circle
-    drawCircle(475.0f,310.0f,18.0f);
-    drawCircle(475.0f,348.0f,18.0f);
-    drawCircle(475.0f,383.0f,18.0f);
-
-     int HotelBelowStripe1=430;
-    for(int i=7;i>=0;i--)
-    {
-        HotelBelowStripe1+=24;
-        HotelBelowWindow1(HotelBelowStripe1,267);
-    }
-
-    int HotelAboveStripe1=498;
-    for(int i=3;i>=0;i--)
-    {
-        HotelAboveStripe1+=24;
-        HotelAboveWindow1(HotelAboveStripe1,377);
-    }
-
-=======
     glColor3ub(15,47,106);
     glBegin(GL_QUADS);
     glVertex2i(500,289);
@@ -588,7 +529,6 @@ void Hotel()
         HotelAboveWindow1(HotelAboveStripe1,377);
     }
 
->>>>>>> 1373c7794ee17db1f21964ad34db07654a77571a
     int HotelAboveStripe2=498;
     for(int i=3;i>=0;i--)
     {
@@ -782,37 +722,6 @@ void SchoolDoor()
     glVertex2i(728,321);
     glEnd();
     glPopMatrix();
-<<<<<<< HEAD
-
-    glPushMatrix();
-    glColor3ub(75,3,4);
-    glBegin(GL_TRIANGLES);
-    glVertex2i(722,321);
-    glVertex2i(803,321);
-    glVertex2i(763,347);
-    glEnd();
-    glPopMatrix();
-
-    glPushMatrix();
-    glColor3ub(100,150,100);
-    glBegin(GL_QUADS);
-    glVertex2i(733,304);
-    glVertex2i(792,304);
-    glVertex2i(792,321);
-    glVertex2i(733,321);
-    glEnd();
-    glPopMatrix();
-
-    glPushMatrix();
-    glColor3ub(89,107,121);
-    glBegin(GL_QUADS);
-    glVertex2i(743,257);
-    glVertex2i(782,257);
-    glVertex2i(782,295);
-    glVertex2i(743,295);
-    glEnd();
-    glPopMatrix();
-=======
 
     glPushMatrix();
     glColor3ub(75,3,4);
@@ -877,7 +786,6 @@ void Moon()
     drawCircle(730.0f,620.0f,40.0f);
     glColor3ub(m2r,m2g,m2b);
     drawCircle(740.0f,640.0f,40.0f);
->>>>>>> 1373c7794ee17db1f21964ad34db07654a77571a
 }
 
 void Sun()
@@ -889,29 +797,8 @@ void Sun()
 
 void Cloud()
 {
-<<<<<<< HEAD
-        glColor3ub(230,234,237);
-        drawCircle(594.0f,586.0f,20.0f);
-        drawCircle(572.0f,595.0f,28.0f);
-        drawCircle(539.0f,595.0f,35.0f);
-        drawCircle(513.0f,575.0f,20.0f);
-
-        drawCircle(393.0f,577.0f,20.0f);
-        drawCircle(370.0f,585.0f,28.0f);
-        drawCircle(339.0f,583.0f,35.0f);
-        drawCircle(311.0f,565.0f,20.0f);
-
-        drawCircle(193.0f,607.0f,20.0f);
-        drawCircle(170.0f,615.0f,28.0f);
-        drawCircle(139.0f,613.0f,35.0f);
-        drawCircle(111.0f,595.0f,20.0f);
-
-        //glutPostRedisplay();
-
-    glColor3ub(230,234,237);
-=======
+    glPopMatrix();
     glColor3ub(cdr,cdg,cdb);
->>>>>>> 1373c7794ee17db1f21964ad34db07654a77571a
     drawCircle(594.0f,586.0f,20.0f);
     drawCircle(572.0f,595.0f,28.0f);
     drawCircle(539.0f,595.0f,35.0f);
@@ -926,9 +813,9 @@ void Cloud()
     drawCircle(170.0f,615.0f,28.0f);
     drawCircle(139.0f,613.0f,35.0f);
     drawCircle(111.0f,595.0f,20.0f);
+    glPushMatrix();
 
-        //glutPostRedisplay();
-
+    glutPostRedisplay();
 }
 
 
@@ -1125,8 +1012,6 @@ void Tree()
     }
 }
 
-<<<<<<< HEAD
-=======
 /*void Lamp()
 {
     glPushMatrix();
@@ -1140,7 +1025,7 @@ void Tree()
     glPopMatrix();
 }*/
 
-void XXX()
+void LampPost()
 {
     for(int i=0;i<8*115;i+=115)
     {
@@ -1188,9 +1073,52 @@ void XXX()
         glColor3ub(ldr,ldg,ldb);
         drawCircle(43+i,218,9);
         glPopMatrix();
+
+        if(ldr==255 && ldg==244 && ldb==78)
+        {
+            glPushMatrix();
+            glColor3ub(255,244,78);
+            glBegin(GL_LINES);
+            glVertex2i(43+i,218);
+            glVertex2i(70+i,225);
+            glEnd();
+
+            glColor3ub(255,244,78);
+            glBegin(GL_LINES);
+            glVertex2i(43+i,218);
+            glVertex2i(60+i,245);
+            glEnd();
+
+            glColor3ub(255,244,78);
+            glBegin(GL_LINES);
+            glVertex2i(43+i,218);
+            glVertex2i(40+i,245);
+            glEnd();
+
+            glColor3ub(255,244,78);
+            glBegin(GL_LINES);
+            glVertex2i(43+i,218);
+            glVertex2i(20+i,240);
+            glEnd();
+
+            glColor3ub(255,244,78);
+            glBegin(GL_LINES);
+            glVertex2i(43+i,218);
+            glVertex2i(10+i,225);
+            glEnd();
+
+            glColor3ub(255,244,78);
+            glBegin(GL_TRIANGLE_FAN);
+            glVertex2i(48+i,209);
+            glVertex2i(38+i,209);
+            glVertex2i(0+i,150);
+            glVertex2i(80+i,150);
+            glEnd();
+
+            glPopMatrix();
+        }
     }
 }
->>>>>>> 1373c7794ee17db1f21964ad34db07654a77571a
 
 void Car1()
 {
@@ -1269,8 +1197,6 @@ void Car1()
 
     //drawCircle(434-500,110,15);
     //drawCircle(434-500,110,15);
-<<<<<<< HEAD
-=======
     glPopMatrix();
 }
 
@@ -1336,12 +1262,122 @@ void Car2()
     glPopMatrix();
 }
 
+void Car3()
+{
+    glPushMatrix();
+    glColor3ub(34,160,160);
+    //glTranslatef(c1xp,c1yp,c1zp);
+    glBegin(GL_QUADS);
+    glVertex2i(311-150,112+100);
+    glVertex2i(414-150,112+100);
+    glVertex2i(414-150,174+100);
+    glVertex2i(311-150,174+100);
+    glEnd();
+    //glPopMatrix();
+
+    //glPushMatrix();
+    glColor3ub(45,194,198);
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2i(414-150,162+100);
+    glVertex2i(445-150,162+100);
+    glVertex2i(473-150,134+100);
+    glVertex2i(473-150,112+100);
+    glVertex2i(414-150,112+100);
+    glEnd();
+    //glPopMatrix();
+
+    //glPushMatrix();
+    glColor3ub(75,89,89);
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2i(417-150,158+100);
+    glVertex2i(444-150,158+100);
+    glVertex2i(463-150,139+100);
+    glVertex2i(463-150,134+100);
+    glVertex2i(417-150,134+100);
+    glEnd();
+    //glPopMatrix();
+
+    //glPushMatrix();
+    glColor3ub(255,0,0);
+    glBegin(GL_QUADS);
+    glVertex2i(464-150,128+100);
+    glVertex2i(472-150,128+100);
+    glVertex2i(472-150,113+100);
+    glVertex2i(464-150,113+100);
+    glEnd();
+    //glPopMatrix();
+
+    //glPushMatrix();
+    glColor3ub(0,0,0);
+    glBegin(GL_QUADS);
+    glVertex2i(419-150,126+100);
+    glVertex2i(431-150,126+100);
+    glVertex2i(431-150,129+100);
+    glVertex2i(419-150,129+100);
+    glEnd();
+    //glPopMatrix();
+
+    //glPushMatrix();
+    glColor3ub(48,48,46);
+    drawCircle(342-150,116+100,15);
+    glColor3ub(255,255,255);
+    drawCircle(342-150,116+100,10);
+    glColor3ub(0,0,0);
+    drawCircle(342-150,116+100,8);
+
+    //drawCircle(342-500,110,15);
+    //drawCircle(342-500,110,15);
+    //glPopMatrix();
+
+    //glPushMatrix();
+    glColor3ub(48,48,46);
+    drawCircle(434-150,116+100,15);
+    glColor3ub(255,255,255);
+    drawCircle(434-150,116+100,10);
+    glColor3ub(0,0,0);
+    drawCircle(434-150,116+100,8);
+
+    //drawCircle(434-500,110,15);
+    //drawCircle(434-500,110,15);
+
+    glColor3ub(255,255,255);
+    glBegin(GL_LINES);
+    glVertex2i(342-200,200);
+    glVertex2i(434-100,200);
+    glEnd();
+    glPopMatrix();
+}
+
+void Rain()
+{
+    glPushMatrix();
+    glTranslatef(c1xp,(-1)*p1yp,0);
+    glColor3ub(255,255,255);
+    for(int j=0;j<20*160;j+=20)
+    {
+        for(int i=0;i<20*160;i+=20)
+        {
+            glBegin(GL_LINES);
+            glVertex2i(0+i+j,0+i);
+            glVertex2i(10+i+j,10+i);
+            glEnd();
+
+            glBegin(GL_LINES);
+            glVertex2i(0+i-j,0+i);
+            glVertex2i(10+i-j,10+i);
+            glEnd();
+        }
+    }
+    glPopMatrix();
+}
+
 void Plane()
 {
     glPushMatrix();
 
     glTranslatef(p1xp,p1yp,p1zp);
     glScalef(x-p1sxp,x-p1syp,0.0-p1szp);
+
     glColor3ub(222,231,255);
     glBegin(GL_QUADS);
     glVertex2i(937,440);
@@ -1365,7 +1401,15 @@ void Plane()
     glVertex2i(1032,468);
     glVertex2i(1019,439);
     glEnd();
->>>>>>> 1373c7794ee17db1f21964ad34db07654a77571a
+
+    int y=0;
+    for(int i=0;i<4*15;i+=15)
+    {
+        glColor3ub(120,55,96);
+        drawCircle(960+i,445+y,3);
+        y-=4;
+    }
+
     glPopMatrix();
 }
 
@@ -1431,6 +1475,16 @@ void keyboard(unsigned char key, int x, int y)
     {
         StopCar1(0);
         glutPostRedisplay();
+    }
+    if(key=='r')
+    {
+        if(r==0)
+        {
+            r=1;
+        }else
+        {
+            r=0;
+        }
     }
     if(key=='n')
     {
@@ -1503,11 +1557,7 @@ void keyboard(unsigned char key, int x, int y)
 
 void myDisplay(void)
 {
-    glClear (GL_COLOR_BUFFER_BIT);
-<<<<<<< HEAD
-    //glPointSize(4.0);
-=======
->>>>>>> 1373c7794ee17db1f21964ad34db07654a77571a
+    glClear(GL_COLOR_BUFFER_BIT);
 
     Sky();
     Home();
@@ -1519,27 +1569,15 @@ void myDisplay(void)
 
     School();
     SchoolDoor();
-<<<<<<< HEAD
-
-=======
     HouseFrontTree();
     Moon();
->>>>>>> 1373c7794ee17db1f21964ad34db07654a77571a
     Sun();
     Cloud();
 
     BetweenRoadAndBuldings();
     Road();
-<<<<<<< HEAD
-    //LampPostX();
-    RoadCorner1();
-    RoadCorner2();
-    RoadGrash();
-    Tree();
-    Car1();
-    glFlush ();
-=======
-    XXX();
+    Car3();
+    LampPost();
     RoadCorner1();
     RoadCorner2();
     RoadGrash();
@@ -1552,10 +1590,12 @@ void myDisplay(void)
     print(540,410,hotel);
     print(267,300,hospital);
 
+    if(r==1)
+    {
+        Rain();
+    }
     glFlush ();
-
     glutSwapBuffers();
->>>>>>> 1373c7794ee17db1f21964ad34db07654a77571a
 }
 
 int main(int argc, char** argv)
@@ -1563,11 +1603,7 @@ int main(int argc, char** argv)
     glutInit(&argc, argv);
     glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize (902,684);
-<<<<<<< HEAD
-    //glutInitWindowPosition (100, 150);
-=======
     glutInitWindowPosition (250, 30);
->>>>>>> 1373c7794ee17db1f21964ad34db07654a77571a
     glutCreateWindow ("City Road View");
     glutDisplayFunc(myDisplay);
     glutKeyboardFunc(keyboard);
