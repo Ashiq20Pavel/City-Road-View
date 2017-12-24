@@ -17,6 +17,7 @@ int dnr=103,dng=155,dnb=176;
 int ldr=255,ldg=255,ldb=255;
 int sdr=246,sdg=171,sdb=26;
 int cdr=230,cdg=234,cdb=237;
+int gdr=100,gdg=171,gdb=55;
 
 char school[] = "School";
 char hospital[] = "Hospital";
@@ -859,7 +860,7 @@ void RoadCorner2()
 void RoadGrash()
 {
     glPushMatrix();
-    glColor3ub(100,171,55);
+    glColor3ub(gdr,gdg,gdb);
     glBegin(GL_QUADS);
     glVertex3f(0.0,0.0,0.0);
     glVertex3f(902.0,0.0,0.0);
@@ -872,7 +873,8 @@ void RoadGrash()
 void BetweenRoadAndBuldings()
 {
     glPushMatrix();
-    glColor3ub(100,171,55);
+    glColor3ub(gdr,gdg,gdb);
+    //glColor3ub(100,171,55);
     glBegin(GL_QUADS);
     glVertex3f(0.0,157.0,0.0);
     glVertex3f(902.0,157.0,0.0);
@@ -1282,6 +1284,10 @@ void keyboard(unsigned char key, int x, int y)
             cdg=50;
             cdb=59;
 
+            gdr=29;
+            gdg=96;
+            gdb=17;
+
         }else if(dnr==0 && dng==50 && dnb==59)
         {
             dnr=103;
@@ -1299,6 +1305,12 @@ void keyboard(unsigned char key, int x, int y)
             cdr=230;
             cdg=234;
             cdb=237;
+
+            gdr=100;
+            gdg=171;
+            gdb=55;
+
+            //100,171,55
 
             //glColor3ub(230,234,237);
         }
