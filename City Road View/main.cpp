@@ -749,21 +749,6 @@ void Cloud()
 
         //glutPostRedisplay();
 
-    glColor3ub(230,234,237);
-    drawCircle(594.0f,586.0f,20.0f);
-    drawCircle(572.0f,595.0f,28.0f);
-    drawCircle(539.0f,595.0f,35.0f);
-    drawCircle(513.0f,575.0f,20.0f);
-
-    drawCircle(393.0f,577.0f,20.0f);
-    drawCircle(370.0f,585.0f,28.0f);
-    drawCircle(339.0f,583.0f,35.0f);
-    drawCircle(311.0f,565.0f,20.0f);
-
-    drawCircle(193.0f,607.0f,20.0f);
-    drawCircle(170.0f,615.0f,28.0f);
-    drawCircle(139.0f,613.0f,35.0f);
-    drawCircle(111.0f,595.0f,20.0f);
 }
 
 
@@ -861,7 +846,7 @@ void RoadGrash()
 void BetweenRoadAndBuldings()
 {
     glPushMatrix();
-    glColor3ub(128,128,128);
+    glColor3ub(100,171,55);
     glBegin(GL_QUADS);
     glVertex3f(0.0,158.0,0.0);
     glVertex3f(902.0,158.0,0.0);
