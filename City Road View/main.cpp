@@ -758,26 +758,25 @@ void HouseFrontTree()
 {
      for(float i=0; i<7*130;i+=245)
      {
+        glPushMatrix();
+        glColor3ub(156,112,63);
+        glBegin(GL_QUADS);
+        glVertex2i(140+i,256);
+        glVertex2i(148+i,256);
+        glVertex2i(148+i,285);
+        glVertex2i(140+i,285);
+        glEnd();
+        glPopMatrix();
 
-    glPushMatrix();
-    glColor3ub(156,112,63);
-    glBegin(GL_QUADS);
-    glVertex2i(140+i,256);
-    glVertex2i(148+i,256);
-    glVertex2i(148+i,285);
-    glVertex2i(140+i,285);
-    glEnd();
-    glPopMatrix();
-
-    glColor3ub(37,90,27);
-    drawCircle(144.0f+i,288.0f,10.0f);
-    drawCircle(150.0f+i,281.0f,9.0f);
-    drawCircle(157.0f+i,286.0f,7.0f);
-    drawCircle(146.0f+i,232.0f,12.0f);
-    drawCircle(134.0f+i,291.0f,12.0f);
-    drawCircle(138.0f+i,300.0f,13.0f);
-    drawCircle(144.0f+i,299.0f,7.0f);
-    drawCircle(150.0f+i,299.0f,10.0f);
+        glColor3ub(37,90,27);
+        drawCircle(144.0f+i,288.0f,10.0f);
+        drawCircle(150.0f+i,281.0f,9.0f);
+        drawCircle(157.0f+i,286.0f,7.0f);
+        drawCircle(146.0f+i,232.0f,12.0f);
+        drawCircle(134.0f+i,291.0f,12.0f);
+        drawCircle(138.0f+i,300.0f,13.0f);
+        drawCircle(144.0f+i,299.0f,7.0f);
+        drawCircle(150.0f+i,299.0f,10.0f);
      }
 }
 
@@ -1367,19 +1366,20 @@ void Rain()
 {
     glPushMatrix();
     glTranslatef(c1xp,(-1)*p1yp,0);
-    glColor3ub(255,255,255);
+    cout << "Rain speed: "  << c1xp*1 << endl;
+    glColor3ub(103,155,176);
     for(int j=0;j<20*160;j+=20)
     {
         for(int i=0;i<20*160;i+=20)
         {
             glBegin(GL_LINES);
             glVertex2f(0+i+j,0+i);
-            glVertex2f(5.5+i+j,10+i);
+            glVertex2f(-5.5+i+j,10+i);
             glEnd();
 
             glBegin(GL_LINES);
             glVertex2f(0+i-j,0+i);
-            glVertex2f(5.5+i-j,10+i);
+            glVertex2f(-5.5+i-j,10+i);
             glEnd();
         }
     }
@@ -1518,13 +1518,6 @@ void CarTranslate(int value)
     glutTimerFunc(0,CarTranslate,25);
 }
 
-
-void StopCar1(int value)
-{
-    c1xp = 0.0;
-    glutTimerFunc(0,StopCar1,25);
-}
-
 void keyboard(unsigned char key, int x, int y)
 {
     if(key=='b')
@@ -1532,12 +1525,11 @@ void keyboard(unsigned char key, int x, int y)
         CarTranslate(0);
         glutPostRedisplay();
     }
-    if(key=='s')
+    if(key=='e')
     {
-        StopCar1(0);
-        glutPostRedisplay();
+        exit(1);
     }
-    if(key=='r')
+    /*if(key=='r')
     {
         if(r==0)
         {
@@ -1546,7 +1538,7 @@ void keyboard(unsigned char key, int x, int y)
         {
             r=0;
         }
-    }
+    }*/
     if(key=='n')
     {
         if(dnr==103 && dng==155 && dnb==176)
@@ -1601,7 +1593,7 @@ void keyboard(unsigned char key, int x, int y)
             gdg=171;
             gdb=55;
 
-             m1r=103;
+            m1r=103;
             m1g=155;
             m1b=176;
 
@@ -1616,6 +1608,29 @@ void keyboard(unsigned char key, int x, int y)
     }
 }
 
+void Raining()
+{
+    if(r==0)
+    {
+        r=1;
+    }else
+    {
+        r=0;
+    }
+}
+
+void mouse(int button,int state,int x,int y)
+{
+    switch(button)
+    {
+    case GLUT_RIGHT_BUTTON:
+        if(state==GLUT_DOWN)
+        Raining();
+        break;
+    default:
+        break;
+    }
+}
 void myDisplay(void)
 {
     glClear(GL_COLOR_BUFFER_BIT);
@@ -1672,6 +1687,7 @@ int main(int argc, char** argv)
     glutCreateWindow ("City Road View");
     glutDisplayFunc(myDisplay);
     glutKeyboardFunc(keyboard);
+    glutMouseFunc(mouse);
     myInit ();
     glutMainLoop();
 }
