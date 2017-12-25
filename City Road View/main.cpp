@@ -10,6 +10,8 @@ float c2xp=0.0,c2yp=0.0,c2zp=0.0;
 float p1xp=0.0,p1yp=0.0,p1zp=0.0;
 float p1sxp=0.0,p1syp=0.0,p1szp=0.0;
 float x=1.0;
+float rxp=0.0,ryp=0.0,rzp=0.0;
+float r=0.0;
 
 float width=-940,width2=600,width3=2000;
 
@@ -20,6 +22,7 @@ int cdr=230,cdg=234,cdb=237;
 int gdr=100,gdg=171,gdb=55;
 int m1r=103,m1g=155,m1b=176;
 int m2r=103,m2g=155,m2b=176;
+int m=0;
 
 char school[] = "School";
 char hospital[] = "Hospital";
@@ -564,7 +567,7 @@ void Door()
     glEnd();
     glPopMatrix();
 
-     glPushMatrix();     // door middle
+    glPushMatrix();     // door middle
     glColor3ub(70,113,106);
     glBegin(GL_QUADS);
     glVertex2i(528,280);
@@ -780,10 +783,13 @@ void HouseFrontTree()
 
 void Moon()
 {
+    glPushMatrix();
+    //glTranslatef(0.0,(-1)*c1xp,0.0);
     glColor3ub(m1r,m1g,m1b);
     drawCircle(730.0f,620.0f,40.0f);
     glColor3ub(m2r,m2g,m2b);
     drawCircle(740.0f,640.0f,40.0f);
+    glPopMatrix();
 }
 
 void Sun()
@@ -793,26 +799,38 @@ void Sun()
     glutPostRedisplay();
 }
 
+float cdxp1=0.0;
+float cdxp2=0.0;
+float cdxp3=0.0;
+
 void Cloud()
 {
+    glPushMatrix();
+    glTranslatef(c1xp+cdxp1,0,0);
     glColor3ub(cdr,cdg,cdb);
     drawCircle(594.0f,586.0f,20.0f);
     drawCircle(572.0f,595.0f,28.0f);
     drawCircle(539.0f,595.0f,35.0f);
     drawCircle(513.0f,575.0f,20.0f);
+    glPopMatrix();
 
+    glPushMatrix();
+    //glTranslatef(c1xp+cdxp2,0,0);
     drawCircle(393.0f,577.0f,20.0f);
     drawCircle(370.0f,585.0f,28.0f);
     drawCircle(339.0f,583.0f,35.0f);
     drawCircle(311.0f,565.0f,20.0f);
+    glPopMatrix();
 
+    glPushMatrix();
+    glTranslatef(c1xp+cdxp3,0,0);
     drawCircle(193.0f,607.0f,20.0f);
     drawCircle(170.0f,615.0f,28.0f);
     drawCircle(139.0f,613.0f,35.0f);
     drawCircle(111.0f,595.0f,20.0f);
+    glPopMatrix();
 
-        //glutPostRedisplay();
-
+    glutPostRedisplay();
 }
 
 
@@ -1022,7 +1040,7 @@ void Tree()
     glPopMatrix();
 }*/
 
-void XXX()
+void LampPost()
 {
     for(int i=0;i<8*115;i+=115)
     {
@@ -1070,6 +1088,50 @@ void XXX()
         glColor3ub(ldr,ldg,ldb);
         drawCircle(43+i,218,9);
         glPopMatrix();
+
+        if(ldr==255 && ldg==244 && ldb==78)
+        {
+            glPushMatrix();
+            glColor3ub(255,244,78);
+            glBegin(GL_LINES);
+            glVertex2i(43+i,218);
+            glVertex2i(70+i,225);
+            glEnd();
+
+            glColor3ub(255,244,78);
+            glBegin(GL_LINES);
+            glVertex2i(43+i,218);
+            glVertex2i(60+i,245);
+            glEnd();
+
+            glColor3ub(255,244,78);
+            glBegin(GL_LINES);
+            glVertex2i(43+i,218);
+            glVertex2i(40+i,245);
+            glEnd();
+
+            glColor3ub(255,244,78);
+            glBegin(GL_LINES);
+            glVertex2i(43+i,218);
+            glVertex2i(20+i,240);
+            glEnd();
+
+            glColor3ub(255,244,78);
+            glBegin(GL_LINES);
+            glVertex2i(43+i,218);
+            glVertex2i(10+i,225);
+            glEnd();
+
+            glColor3ub(255,244,78);
+            glBegin(GL_TRIANGLE_FAN);
+            glVertex2i(48+i,209);
+            glVertex2i(38+i,209);
+            glVertex2i(0+i,150);
+            glVertex2i(80+i,150);
+            glEnd();
+
+            glPopMatrix();
+        }
     }
 }
 
@@ -1215,12 +1277,122 @@ void Car2()
     glPopMatrix();
 }
 
-void Plane()
+void Car3()
+{
+    glPushMatrix();
+    glColor3ub(34,160,160);
+    //glTranslatef(c1xp,c1yp,c1zp);
+    glBegin(GL_QUADS);
+    glVertex2i(311-150,112+100);
+    glVertex2i(414-150,112+100);
+    glVertex2i(414-150,174+100);
+    glVertex2i(311-150,174+100);
+    glEnd();
+    //glPopMatrix();
+
+    //glPushMatrix();
+    glColor3ub(45,194,198);
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2i(414-150,162+100);
+    glVertex2i(445-150,162+100);
+    glVertex2i(473-150,134+100);
+    glVertex2i(473-150,112+100);
+    glVertex2i(414-150,112+100);
+    glEnd();
+    //glPopMatrix();
+
+    //glPushMatrix();
+    glColor3ub(75,89,89);
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2i(417-150,158+100);
+    glVertex2i(444-150,158+100);
+    glVertex2i(463-150,139+100);
+    glVertex2i(463-150,134+100);
+    glVertex2i(417-150,134+100);
+    glEnd();
+    //glPopMatrix();
+
+    //glPushMatrix();
+    glColor3ub(255,0,0);
+    glBegin(GL_QUADS);
+    glVertex2i(464-150,128+100);
+    glVertex2i(472-150,128+100);
+    glVertex2i(472-150,113+100);
+    glVertex2i(464-150,113+100);
+    glEnd();
+    //glPopMatrix();
+
+    //glPushMatrix();
+    glColor3ub(0,0,0);
+    glBegin(GL_QUADS);
+    glVertex2i(419-150,126+100);
+    glVertex2i(431-150,126+100);
+    glVertex2i(431-150,129+100);
+    glVertex2i(419-150,129+100);
+    glEnd();
+    //glPopMatrix();
+
+    //glPushMatrix();
+    glColor3ub(48,48,46);
+    drawCircle(342-150,116+100,15);
+    glColor3ub(255,255,255);
+    drawCircle(342-150,116+100,10);
+    glColor3ub(0,0,0);
+    drawCircle(342-150,116+100,8);
+
+    //drawCircle(342-500,110,15);
+    //drawCircle(342-500,110,15);
+    //glPopMatrix();
+
+    //glPushMatrix();
+    glColor3ub(48,48,46);
+    drawCircle(434-150,116+100,15);
+    glColor3ub(255,255,255);
+    drawCircle(434-150,116+100,10);
+    glColor3ub(0,0,0);
+    drawCircle(434-150,116+100,8);
+
+    //drawCircle(434-500,110,15);
+    //drawCircle(434-500,110,15);
+
+    glColor3ub(255,255,255);
+    glBegin(GL_LINES);
+    glVertex2i(342-200,200);
+    glVertex2i(434-100,200);
+    glEnd();
+    glPopMatrix();
+}
+
+void Rain()
+{
+    glPushMatrix();
+    glTranslatef(c1xp,(-1)*p1yp,0);
+    glColor3ub(255,255,255);
+    for(int j=0;j<20*160;j+=20)
+    {
+        for(int i=0;i<20*160;i+=20)
+        {
+            glBegin(GL_LINES);
+            glVertex2f(0+i+j,0+i);
+            glVertex2f(5.5+i+j,10+i);
+            glEnd();
+
+            glBegin(GL_LINES);
+            glVertex2f(0+i-j,0+i);
+            glVertex2f(5.5+i-j,10+i);
+            glEnd();
+        }
+    }
+    glPopMatrix();
+}
+
+void Plane1()
 {
     glPushMatrix();
 
     glTranslatef(p1xp,p1yp,p1zp);
     glScalef(x-p1sxp,x-p1syp,0.0-p1szp);
+
     glColor3ub(222,231,255);
     glBegin(GL_QUADS);
     glVertex2i(937,440);
@@ -1229,7 +1401,7 @@ void Plane()
     glVertex2i(956,458);
     glEnd();
 
-    glColor3ub(222,231,255);
+    //glColor3ub(222,231,255);
     glBegin(GL_QUADS);
     glVertex2i(1000,407);
     glVertex2i(979,407);
@@ -1237,13 +1409,59 @@ void Plane()
     glVertex2i(979,433);
     glEnd();
 
-    glColor3ub(222,231,255);
+    //glColor3ub(222,231,255);
     glBegin(GL_QUADS);
     glVertex2i(1007,443);
     glVertex2i(1028,469);
     glVertex2i(1032,468);
     glVertex2i(1019,439);
     glEnd();
+
+    int y=0;
+    for(int i=0;i<4*15;i+=15)
+    {
+        glColor3ub(120,55,96);
+        drawCircle(960+i,445+y,3);
+        y-=4;
+    }
+
+    glPopMatrix();
+}
+
+void Plane2()
+{
+    glPushMatrix();
+    glTranslatef(c1xp,0.0,0.0);
+    glColor3ub(0,78,168);
+    glBegin(GL_QUADS);
+    glVertex2i(7-200,307+350);
+    glVertex2i(76-200,318+350);
+    glVertex2i(95-200,312+350);
+    glVertex2i(22-200,290+350);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex2i(13-200,305+350);
+    glVertex2i(0-200,338+350);
+    glVertex2i(4-200,339+350);
+    glVertex2i(25-200,313+350);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glVertex2i(32-200,277+350);
+    glVertex2i(49-200,301+350);
+    glVertex2i(64-200,306+350);
+    glVertex2i(37-200,279+350);
+    glEnd();
+
+    int j=0;
+    for(int i=0;i<5*10;i+=10)
+    {
+        glColor3ub(249,190-j,0);
+        drawCircle(73-i-200,312.5-j+350,2);
+        j+=2;
+    }
+
     glPopMatrix();
 }
 
@@ -1255,11 +1473,19 @@ void CarTranslate(int value)
 
     if(width<10093)
     {
+        cdxp1+=0.09;
+        cdxp2+=0.1;
+        cdxp3+=0.0001; //CloudsT variable
+
         c1xp+=0.1;
         if(width>10091)
         {
             width=-940;
             c1xp=0.0;
+        }
+        if(width==1295)
+        {
+            cdxp1=0.0;
         }
         cout << "Width: " << width << endl;
     }
@@ -1292,6 +1518,7 @@ void CarTranslate(int value)
     glutTimerFunc(0,CarTranslate,25);
 }
 
+
 void StopCar1(int value)
 {
     c1xp = 0.0;
@@ -1309,6 +1536,16 @@ void keyboard(unsigned char key, int x, int y)
     {
         StopCar1(0);
         glutPostRedisplay();
+    }
+    if(key=='r')
+    {
+        if(r==0)
+        {
+            r=1;
+        }else
+        {
+            r=0;
+        }
     }
     if(key=='n')
     {
@@ -1381,7 +1618,7 @@ void keyboard(unsigned char key, int x, int y)
 
 void myDisplay(void)
 {
-    glClear (GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT);
 
     Sky();
     Home();
@@ -1394,27 +1631,35 @@ void myDisplay(void)
     School();
     SchoolDoor();
     HouseFrontTree();
-    Moon();
     Sun();
     Cloud();
 
     BetweenRoadAndBuldings();
     Road();
-    XXX();
+    Car3();
+    LampPost();
     RoadCorner1();
     RoadCorner2();
     RoadGrash();
     Car1();
     Car2();
-    Plane();
+    Plane1();
+    Plane2();
     Tree();
 
     print(732,306,school);
     print(540,410,hotel);
     print(267,300,hospital);
 
+    if(ldr==255 && ldg==244 && ldb==78)
+    {
+        Moon();
+    }
+    if(r==1)
+    {
+        Rain();
+    }
     glFlush ();
-
     glutSwapBuffers();
 }
 
